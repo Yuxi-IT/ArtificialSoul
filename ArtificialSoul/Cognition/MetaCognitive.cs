@@ -15,9 +15,9 @@ namespace ArtificialSoul.Cognition
         private readonly string modelName;
         private readonly string roleDescription;
 
-        public MetaCognitive(string apiKey, string modelName, string roleDescription)
+        public MetaCognitive(string apiKey, string modelName, string roleDescription,string api)
         {
-            client = new RestClient("https://api.chatanywhere.tech/v1/chat/completions");
+            client = new RestClient(api);
             client.AddDefaultHeader("Authorization", $"Bearer {apiKey}");
             client.AddDefaultHeader("Content-Type", "application/json");
 
